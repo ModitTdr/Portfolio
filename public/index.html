@@ -1,28 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth box-border">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modit Tuladhar</title>
-    <link rel="stylesheet" href="../src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="test.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../src/style.css">
     <style>
+    nav{
+        animation: fade-in 2s;
+    }
+    #hero{
+        animation: swipe-in,fade-in ;
+        animation-duration: 1s,1.4s;
+    }
+    #works{
+        animation: appear-in,swipe-up ease;
+        animation-timeline:view();
+        animation-range: entry cover 60%;
+    }
+    @keyframes appear-in{
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
+    @keyframes fade-in{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    @keyframes swipe-in{
+        0%{transform: translateX(-50%);}
+        100%{transform: translateX(0);}
+    }
+    @keyframes swipe-up{
+        0%{transform: translateY(50%);}
+        100%{transform: translateY(0);}
+    }
     </style>
 </head>
-<body class="bg-gradient-to-r from-zinc-800 to-black text-gray-200 font-sans">
-    <section class="min-h-screen xl:px-40 p-8 flex items-center justify-start">
-        <div>
-            <div class="my-8">
-                <h1 class="font-semibold sm:text-7xl text-6xl">
+<body class="overscroll-none bg-gradient-to-r from-zinc-800 to-black text-gray-100 font-dmsans sm:px-28 px-4 ">
+    <nav class="sm:flex hidden font-bold justify-between items-end sticky pt-16">
+        <h2 class="2xl:text-4xl sm:text-3xl">Modit Tuladhar</h2>
+        <div class="flex text-4xl sm:text-3xl">
+            <a href="#fb" class="hover:text-blue-600 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#insta" class="hover:text-pink-600 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#linked" class="hover:text-blue-400 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="h-hero flex items-center pb-32 justify-start">
+        <div id="hero">
+            <div class="lg:w-10/12 font-bold lg:tracking-widest">
+                <h1 class="2xl:text-9xl lg:text-8xl text-6xl sm:border-b-2">
                     Hello! I'm <br><span class="text-yellow-400">Modit Tuladhar</span>
                 </h1>
-                <p class="text-gray-400 2xl:text-2xl text-sm my-3 text-start">I am an undergraduate student pursuing a Bachelor's in Computer Applications 
+                <p class="lg:w-[90%] text-gray-400 2xl:text-2xl text-base my-2 text-start">I am an undergraduate student pursuing a Bachelor's in Computer Applications 
                     aspiring to become a full stack developer.</p>
             </div>
 
-            <h5 class="my-8 mb-3 w-1/4 py-1">Contact:</h5>
+            <h5 class="sm:hidden my-8 mb-3 w-1/4 py-1">Contact:</h5>
 
-            <div class="flex text-xl gap-4">
+            <div class="sm:hidden flex text-xl gap-4">
                 <a href="#fb" class="bg-blue-600 w-9 h-9 flex items-center justify-center rounded-full transition ease-in-out hover:scale-125 duration-150">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
@@ -45,21 +92,38 @@
         </div>
     </section>
 
-    <section class="min-h-screen xl:px-40 p-8 flex items-start justify-start">
+    <section class="min-h-screen flex items-start justify-start pt-16" id="works">
         <div>
-            <div class="font-semibold sm:text-7xl text-6xl my-8">
+            <div class="font-semibold sm:text-7xl text-6xl mb-8">
                 <h2>Projects</h2>
             </div>
-            <div id="cards my-8">
-                <div class=" overflow-hidden sm:flex">
-                    <a href="#" class="relative max-w-md">
-                        <img class="w-full rounded-xl" src="./images/chefMandu.png" alt="">
+            <div id="cards" class="mb-8">
+                <div class="sm:flex">
+                    <a href="#" class="max-w-md ">
+                        <img class="w-full rounded-xl hover:scale-105 transition ease-in" src="./images/chefMandu.png" alt="">
                     </a>
                     <div class="text-start sm:px-4 sm:w-2/4">
                         <h3 class="text-3xl font-bold my-2">ChefMandu</h3>
                         <p class="mb-3 text-sm text-gray-400">Chefmandu is a recipe management system that helps you to organize and share your recipes</p>
                         <button class="bg-yellow-400 text-black py-1 px-4 rounded-md text-md font-bold transition ease-in-out border border-yellow-400 hover:bg-transparent hover:text-yellow-400">
-                            <a href="#">
+                            <a href="https://github.com/ModitTdr/chefMandu">
+                                Check
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="cards" class="mb-8">
+                <div class="sm:flex">
+                    <a href="#" class="relative max-w-md ">
+                        <img class="w-full rounded-xl hover:scale-105 transition ease-in" src="./images/chefMandu.png" alt="">
+                    </a>
+                    <div class="text-start sm:px-4 sm:w-2/4">
+                        <h3 class="text-3xl font-bold my-2">ChefMandu</h3>
+                        <p class="mb-3 text-sm text-gray-400">Chefmandu is a recipe management system that helps you to organize and share your recipes</p>
+                        <button class="bg-yellow-400 text-black py-1 px-4 rounded-md text-md font-bold transition ease-in-out border border-yellow-400 hover:bg-transparent hover:text-yellow-400">
+                            <a href="https://github.com/ModitTdr/chefMandu">
                                 Check
                             </a>
                         </button>
@@ -68,9 +132,9 @@
             </div>
         </div>
     </section>
-
+<!-- 
     <section class="min-h-screen xl:px-40 p-8 flex items-start justify-start">
         
-    </section>
+    </section> -->
 </body>
 </html>

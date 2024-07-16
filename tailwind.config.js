@@ -2,10 +2,16 @@
 module.exports = {
   content: ["./public/*.{html,js}"],
   theme: {
-    fontFamily:{
-      'comic':['Comic Reliefb'],
+    
+    extend: {
+      height:{
+        'hero': 'calc(100vh - 72px)',
+      },
+      fontFamily:{
+        'comic':['Comic Reliefb'],
+        'dmsans':["DM Sans"],
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
