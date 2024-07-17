@@ -7,51 +7,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="public/animation.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../src/style.css">
-    <style>
-    nav{
-        animation: fade-in 2s;
-    }
-    #hero{
-        animation: swipe-in,fade-in ;
-        animation-duration: 1s,1.4s;
-    }
-    #works{
-        animation: appear-in,swipe-up ease;
-        animation-timeline:view();
-        animation-range: entry cover 60%;
-    }
-    @keyframes appear-in{
-        0%{opacity: 0;}
-        100%{opacity: 1;}
-    }
-    @keyframes fade-in{
-        from{opacity: 0;}
-        to{opacity: 1;}
-    }
-    @keyframes swipe-in{
-        0%{transform: translateX(-50%);}
-        100%{transform: translateX(0);}
-    }
-    @keyframes swipe-up{
-        0%{transform: translateY(50%);}
-        100%{transform: translateY(0);}
-    }
-    </style>
+    <link rel="stylesheet" href="src/style.css">
 </head>
 <body class="overscroll-none bg-gradient-to-r from-zinc-800 to-black text-gray-100 font-dmsans sm:px-28 px-4 ">
+
     <nav class="sm:flex hidden font-bold justify-between items-end sticky pt-16">
         <h2 class="2xl:text-4xl sm:text-3xl">Modit Tuladhar</h2>
         <div class="flex text-4xl sm:text-3xl">
-            <a href="#fb" class="hover:text-blue-600 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
+            <a href="https://www.facebook.com/modit.tuladhar" class="hover:text-blue-600 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
                 <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="#insta" class="hover:text-pink-600 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
+            <a href="https://www.linkedin.com/in/modittuladhar" class="hover:text-pink-600 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
                 <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="#linked" class="hover:text-blue-400 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
+            <a href="https://www.linkedin.com/in/modittuladhar" class="hover:text-blue-400 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
                 <i class="fa-brands fa-linkedin"></i>
             </a>
         </div>
@@ -100,7 +71,7 @@
             <div id="cards" class="mb-8">
                 <div class="sm:flex">
                     <a href="#" class="max-w-md ">
-                        <img class="w-full rounded-xl hover:scale-105 transition ease-in" src="./images/chefMandu.png" alt="">
+                        <img class="w-full rounded-xl hover:scale-105 transition ease-in" src="public/images/chefMandu.png" alt="">
                     </a>
                     <div class="text-start sm:px-4 sm:w-2/4">
                         <h3 class="text-3xl font-bold my-2">ChefMandu</h3>
@@ -114,22 +85,6 @@
                 </div>
             </div>
             
-            <div id="cards" class="mb-8">
-                <div class="sm:flex">
-                    <a href="#" class="relative max-w-md ">
-                        <img class="w-full rounded-xl hover:scale-105 transition ease-in" src="./images/chefMandu.png" alt="">
-                    </a>
-                    <div class="text-start sm:px-4 sm:w-2/4">
-                        <h3 class="text-3xl font-bold my-2">ChefMandu</h3>
-                        <p class="mb-3 text-sm text-gray-400">Chefmandu is a recipe management system that helps you to organize and share your recipes</p>
-                        <button class="bg-yellow-400 text-black py-1 px-4 rounded-md text-md font-bold transition ease-in-out border border-yellow-400 hover:bg-transparent hover:text-yellow-400">
-                            <a href="https://github.com/ModitTdr/chefMandu">
-                                Check
-                            </a>
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 <!-- 

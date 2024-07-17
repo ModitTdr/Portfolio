@@ -1,0 +1,28 @@
+nav{
+    animation: fade-in 2s;
+}
+#hero{
+    animation: swipe-in,fade-in ;
+    animation-duration: 1s,1.4s;
+}
+#works{
+    animation: appear-in,swipe-up ease;
+    animation-timeline:view();
+    animation-range: entry cover 60%;
+}
+@keyframes appear-in{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes fade-in{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes swipe-in{
+    0%{transform: translateX(-50%);}
+    100%{transform: translateX(0);}
+}
+@keyframes swipe-up{
+    0%{transform: translateY(50%);}
+    100%{transform: translateY(0);}
+}
