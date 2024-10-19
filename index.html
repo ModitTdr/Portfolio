@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modit Tuladhar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="public/animation.css">
+    <link rel="stylesheet" href="public/main.css">                                                                                                                                                      
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
+    <style>
+        #img2{
+            position: absolute;
+            opacity: 0;
+            transition: .4s ease;
+            transition-delay: .2s ease-in-out;
+        }
+        .try:hover #img1{
+            opacity: 0; 
+        }
+        .try:hover #img2{
+            opacity: 1;
+        }
+    </style>
 </head>
-<body class="overscroll-none bg-gradient-to-r from-zinc-800 to-black text-gray-100 font-dmsans sm:px-28 px-4 ">
-
+<body class="overscroll-none bg-neutral-800 transition ease-in-out text-neutral-200 font-dmsans sm:px-28 px-4">
     <nav class="sm:flex hidden font-bold justify-between items-end sticky pt-16">
         <h2 class="2xl:text-4xl sm:text-3xl">Modit Tuladhar</h2>
         <div class="flex text-4xl sm:text-3xl">
@@ -25,16 +39,23 @@
             <a href="https://www.linkedin.com/in/modittuladhar" class="hover:text-blue-400 px-7 flex justify-center w-8 transition ease-in hover:scale-110 duration-100">
                 <i class="fa-brands fa-linkedin"></i>
             </a>
+            <label class="togContainer w-12 h-6 rounded-2xl py-4 mx-4 flex items-center relative">
+                <input type="checkbox" class="tog" />
+                <span class="toggle absolute w-5 h-5 rounded-full flex justify-center items-center text-sm">
+                    <i class="fa-solid fa-sun" id="#sun"></i>
+                    <i class="fa-solid fa-moon" id="#moon"></i>
+                </span>
+            </label>
         </div>
     </nav>
-
-    <section class="h-hero flex items-center pb-32 justify-start">
+    
+    <section class="h-screen sm:h-hero flex items-center pb-32 justify-start over">
         <div id="hero">
             <div class="lg:w-10/12 font-bold lg:tracking-widest">
                 <h1 class="2xl:text-9xl lg:text-8xl text-6xl sm:border-b-2">
-                    Hello! I'm <br><span class="text-yellow-400">Modit Tuladhar</span>
+                    Hello! I'm <br><span class="text-yellow-400" >Modit Tuladhar</span>
                 </h1>
-                <p class="lg:w-[90%] text-gray-400 2xl:text-2xl text-base my-2 text-start">I am an undergraduate student pursuing a Bachelor's in Computer Applications 
+                <p class="lg:w-[90%] opacity-70 2xl:text-2xl my-2 text-start">I am an undergraduate student pursuing a Bachelor's in Computer Applications 
                     aspiring to become a full stack developer.</p>
             </div>
 
@@ -63,33 +84,53 @@
         </div>
     </section>
 
-    <section class="min-h-screen flex items-start justify-start pt-16" id="works">
-        <div>
-            <div class="font-semibold sm:text-7xl text-6xl mb-8">
-                <h2>Projects</h2>
+    <section class="h-screen flex justify-center items-center py-16">
+        <div class="grid grid-cols-12 gap-4 w-full h-full">
+            <div class="border border-neutral-700 rounded-2xl gap-3 flex flex-col justify-center items-center col-span-12 xl:col-span-4 xl:row-span-4">
+                <h3 class="text-6xl">Projects</h3>
+                <p class="opacity-70">I have worked on so far</p>
             </div>
-            <div id="cards" class="mb-8">
-                <div class="sm:flex">
-                    <a href="#" class="max-w-md ">
-                        <img class="w-full rounded-xl hover:scale-105 transition ease-in" src="public/images/chefMandu.png" alt="">
-                    </a>
-                    <div class="text-start sm:px-4 sm:w-2/4">
-                        <h3 class="text-3xl font-bold my-2">ChefMandu</h3>
-                        <p class="mb-3 text-sm text-gray-400">Chefmandu is a recipe management system that helps you to organize and share your recipes</p>
-                        <button class="bg-yellow-400 text-black py-1 px-4 rounded-md text-md font-bold transition ease-in-out border border-yellow-400 hover:bg-transparent hover:text-yellow-400">
-                            <a href="https://github.com/ModitTdr/chefMandu">
-                                Check
-                            </a>
-                        </button>
-                    </div>
-                </div>
+            <div class="border border-neutral-700 rounded-2xl flex justify-center items-center col-span-12 row-span-2 xl:col-span-4 xl:row-span-2 bg-orange-300 hover:bg-orange-50 transition ease-in-out duration-300 relative overflow-hidden try">
+                <img id="img1" class="w-40 transition-opacity ease-in-out duration-300" src="public/images/chefMandu(logo).svg" alt="">
+                <img id="img2" class="w-full p-6 transition-opacity ease-in-out duration-300 drop-shadow-lg" src="public/images/chefMandu.png" alt="">
             </div>
-            
+            <div class="border border-neutral-700 rounded-2xl flex justify-center items-center col-span-12 row-span-2 xl:col-span-4 xl:row-span-2 bg-white hover:bg-white transition ease-in-out duration-300 relative overflow-hidden try">
+                <img id="img1" class="w-40 transition-opacity ease-in-out duration-300" src="public/images/e-commerce(logo).png" alt="">
+                <img id="img2" class="w-full p-6 transition-opacity ease-in-out duration-300 drop-shadow-lg" src="public/images/wordpress.jpeg" alt="">
+            </div>
+            <div class="border border-neutral-700 rounded-2xl flex justify-center items-center col-span-12 row-span-2 xl:col-span-4 xl:row-span-2 bg-neutral-950 hover:bg-gradient-to-b from-[#0E76AD] to-[#bba4cc] transition ease-in-out duration-500 relative overflow-hidden try">
+                <p class="font-bold text-3xl"><span class="text-[#752d41]">Furry</span>Friends</p>
+                <img id="img2" class="w-full p-6 transition ease-in-out duration-300 drop-shadow-lg" src="public/images/AnimalAdoption.png" alt="">
+            </div>
+            <div class="border border-neutral-700 rounded-2xl flex justify-center items-center col-span-12 xl:col-span-4 xl:row-span-2">test</div>
         </div>
     </section>
+    
 <!-- 
     <section class="min-h-screen xl:px-40 p-8 flex items-start justify-start">
         
     </section> -->
+    <script>
+        var tog = document.querySelector(".tog");
+        var darkMode = localStorage.getItem("darkMode") === "true";
+        tog.checked = darkMode;
+        if(darkMode) darkEnable();
+
+        tog.addEventListener("change", (e) => {
+          if (tog.checked) {
+            darkEnable();
+          } else {
+            darkDisable();
+          }
+        });
+
+        function darkEnable() {
+          localStorage.setItem("darkMode", true);
+        }
+        function darkDisable() {
+          localStorage.setItem("darkMode", false);
+        }
+    
+    </script>
 </body>
 </html>

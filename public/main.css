@@ -1,0 +1,97 @@
+:root {
+  --primary: black;
+  --secondary: #FEF9DB;
+  --accent: #facc15;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.togContainer {
+  background-color: var(--secondary);
+  transition: 0.2s ease;
+  transition-delay: 0.05s;
+}
+.togContainer i{
+  font-size: 12px;
+  transition: .2s ease-in-out;
+}
+.togContainer i:last-child{
+  display: none;
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+.toggle {
+  background-color: var(--primary);
+  left: 6px;
+  transition: 0.25s ease;
+}
+input:checked ~ .toggle {
+  left: 22px;
+  background-color: var(--secondary);
+}
+.togContainer:has(> input:checked) {
+  background-color: var(--primary);
+}
+.togContainer:has(> input:checked) i:first-child{
+  transform: rotate(120deg) scale(.2);
+  opacity: 0;
+  display: none;
+}
+.togContainer:has(> input:checked) i:last-child{
+  transform: rotate(360deg) scale(1);
+  opacity: 1;
+  display: block;
+}
+
+body:has(input:checked) {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* animations */
+nav {
+  animation: fade-in 2s;
+}
+#hero {
+  animation: swipe-in, fade-in;
+  animation-duration: 1s, 1.4s;
+}
+#works {
+  animation: appear-in ease-in-out, swipe-up ease-in-out;
+  animation-timeline: view();
+  animation-range: entry cover 60%;
+}
+@keyframes appear-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes swipe-in {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes swipe-up {
+  0% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
